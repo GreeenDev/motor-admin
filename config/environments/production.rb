@@ -112,9 +112,8 @@ Rails.application.configure do
     primary_key: ENV['SECRET_KEY_BASE'].to_s[0..31].to_s,
     deterministic_key: ENV['SECRET_KEY_BASE'].to_s[32..63].to_s,
     key_derivation_salt: ENV['SECRET_KEY_BASE'].to_s
+    support_unencrypted_data = true
   }
-  
-  config.active_record.encryption.support_unencrypted_data = true
 
   config.active_record.sqlite3_production_warning = false
 
